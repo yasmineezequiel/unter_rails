@@ -14,8 +14,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  gem 'rspec-rails',
-  gem 'cucumber', '~> 2.4'
+  gem 'rspec-rails'
+  gem 'cucumber', '~> 2.99'
 end
 
 group :development do
