@@ -1,16 +1,28 @@
 version: v1.0
-name: Ruby
+name: Sequential
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: bundle exec rspec
+  - name: Build
     task:
       jobs:
-        - name: bundle install
+        - name: build
           commands:
             - checkout
-            - sem-version ruby 2.6.0
-            - bundle install --deployment --path vendor/bundle
-            - bundle exec rspec
+            - ls
+  - name: Test
+    task:
+      jobs:
+        - name: test
+          commands:
+            - checkout
+            - ls
+  - name: Release
+    task:
+      jobs:
+        - name: release
+          commands:
+            - checkout
+            - ls
